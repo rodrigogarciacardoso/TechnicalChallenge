@@ -1,4 +1,4 @@
-﻿using Desafio.Classes;
+﻿using Aplicacao.DI;
 using Desafio.Interfaces;
 using Desafio.Operacoes;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,10 +10,9 @@ namespace Aplicacao
     {
         static void Main()
         {
-            var serviceProvider = new ServiceCollection()
-                .AddSingleton<IDecomposicao, Decomposicao>()
-                .AddSingleton<IValidarPrimos, ValidarPrimos>()
-                .BuildServiceProvider();
+            var _service = new ServiceCollection();
+            Injector.Configure(_service);
+            var _serviceProvider = _service.BuildServiceProvider();
 
             int entrada = 0;
             do
@@ -26,8 +25,8 @@ namespace Aplicacao
 
                 if (entrada != 0)
                 {
-                    var _decomposicao = serviceProvider.GetService<IDecomposicao>();
-                    var _validarPrimos = serviceProvider.GetService<IValidarPrimos>();
+                    var _decomposicao = _serviceProvider.GetService<IDecomposicao>();
+                    var _validarPrimos = _serviceProvider.GetService<IValidarPrimos>();
 
                     var operacoes = new Operacoes(_decomposicao, _validarPrimos);
 
