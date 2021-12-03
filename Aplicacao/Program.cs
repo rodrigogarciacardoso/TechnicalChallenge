@@ -7,50 +7,54 @@ namespace Aplicacao
     {
         static void Main()
         {
-            var divisores = new HashSet<int>();
-            var primos = new HashSet<int>();
-
-            Console.Write("Digite um número: ");
-            string strEntrada = Console.ReadLine();
-            Console.Write("\n");
-
-            int.TryParse(strEntrada, out int entrada);
-
-            for (int i = 1; i <= entrada; i++)
+            int entrada = 0;
+            do
             {
-                if (entrada % i == 0)
-                {
-                    divisores.Add(i);
-                }
-            }
+                Console.Write("Digite um número: ");
+                string strEntrada = Console.ReadLine();
+                Console.Write("\n");
+                int.TryParse(strEntrada, out entrada);
 
-            var isPrimo = true;
-            foreach (var item in divisores)
-            {
-                for (int i = 0; i <= item; i++)
+                if (entrada != 0)
                 {
-                    if ((i == 0) || (i == item) || (i == 1))
+                    var divisores = new HashSet<int>();
+                    var primos = new HashSet<int>();
+
+                    for (int i = 1; i <= entrada; i++)
                     {
-                        continue;
+                        if (entrada % i == 0)
+                        {
+                            divisores.Add(i);
+                        }
                     }
 
-                    if (item % i == 0)
+                    var isPrimo = true;
+                    foreach (var item in divisores)
                     {
-                        isPrimo = false;
-                        break;
+                        for (int i = 2; i <= Math.Sqrt(item); i++)
+                        {
+                            if (item % i == 0)
+                            {
+                                isPrimo = false;
+                                break;
+                            }
+                        }
+
+                        if (isPrimo)
+                        {
+                            primos.Add(item);
+                            isPrimo = true;
+                        }
                     }
+
+                    Console.WriteLine($"Número de Entrada: {entrada}");
+                    Console.WriteLine($"Números divisores: {string.Join(" ", divisores)}");
+                    Console.WriteLine($"Divisores Primos: {string.Join(" ", primos)}");
+
+                    Console.Write("\n"); Console.Write("\n"); Console.Write("\n");
                 }
 
-                if (isPrimo)
-                {
-                    primos.Add(item);
-                    isPrimo = true;
-                }
-            }
-
-            Console.WriteLine($"Número de Entrada: {entrada}");
-            Console.WriteLine($"Números divisores: {string.Join(" ", divisores)}");
-            Console.WriteLine($"Divisores Primos: {string.Join(" ", primos)}");
+            } while (entrada != 0);
         }
     }
 }
