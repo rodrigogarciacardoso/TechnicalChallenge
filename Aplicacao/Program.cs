@@ -1,5 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Desafio.Classes;
+using Desafio.Interfaces;
+using Desafio.Operacoes;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Aplicacao
 {
@@ -7,9 +10,15 @@ namespace Aplicacao
     {
         static void Main()
         {
+            var serviceProvider = new ServiceCollection()
+                .AddSingleton<IDecomposicao, Decomposicao>()
+                .AddSingleton<IValidarPrimos, ValidarPrimos>()
+                .BuildServiceProvider();
+
             int entrada = 0;
             do
             {
+
                 Console.Write("Digite um número: ");
                 string strEntrada = Console.ReadLine();
                 Console.Write("\n");
@@ -17,35 +26,13 @@ namespace Aplicacao
 
                 if (entrada != 0)
                 {
-                    var divisores = new HashSet<int>();
-                    var primos = new HashSet<int>();
+                    var _decomposicao = serviceProvider.GetService<IDecomposicao>();
+                    var _validarPrimos = serviceProvider.GetService<IValidarPrimos>();
 
-                    for (int i = 1; i <= entrada; i++)
-                    {
-                        if (entrada % i == 0)
-                        {
-                            divisores.Add(i);
-                        }
-                    }
+                    var operacoes = new Operacoes(_decomposicao, _validarPrimos);
 
-                    var isPrimo = true;
-                    foreach (var item in divisores)
-                    {
-                        for (int i = 2; i <= Math.Sqrt(item); i++)
-                        {
-                            if (item % i == 0)
-                            {
-                                isPrimo = false;
-                                break;
-                            }
-                        }
-
-                        if (isPrimo)
-                        {
-                            primos.Add(item);
-                            isPrimo = true;
-                        }
-                    }
+                    var divisores = operacoes.RetornarDivisores(entrada);
+                    var primos = operacoes.RetornarPrimos(divisores);
 
                     Console.WriteLine($"Número de Entrada: {entrada}");
                     Console.WriteLine($"Números divisores: {string.Join(" ", divisores)}");
