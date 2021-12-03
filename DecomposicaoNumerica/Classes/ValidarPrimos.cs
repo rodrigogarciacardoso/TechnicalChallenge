@@ -11,6 +11,11 @@ namespace Desafio.Classes
 
         public HashSet<int> RetornarPrimos(HashSet<int> _entrada)
         {
+            if (_entrada?.Count == 0)
+            {
+                throw new ArgumentException();
+            }
+
             var isPrimo = true;
             var primos = new HashSet<int>();
 

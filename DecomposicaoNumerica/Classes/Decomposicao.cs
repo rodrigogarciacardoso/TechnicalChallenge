@@ -11,22 +11,22 @@ namespace Desafio.Classes
 
         public HashSet<int> RetornaDivisores(int numero)
         {
-            if (numero != 0)
+            if (numero == 0)
             {
-                var divisores = new HashSet<int>();
-
-                for (int i = 1; i <= numero; i++)
-                {
-                    if (numero % i == 0)
-                    {
-                        divisores.Add(i);
-                    }
-                }
-
-                return divisores;
+                throw new ArgumentException();
             }
 
-            throw new ArgumentException();
+            var divisores = new HashSet<int>();
+
+            for (int i = 1; i <= numero; i++)
+            {
+                if (numero % i == 0)
+                {
+                    divisores.Add(i);
+                }
+            }
+
+            return divisores;
         }
     }
 }

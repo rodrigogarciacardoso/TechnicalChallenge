@@ -16,24 +16,25 @@ namespace Aplicacao.Programs
         public void IniciarDecomposicaoNumerica()
         {
             int entrada = 0;
-            do
+
+            while (true)
             {
                 Console.Write("Digite um número: ");
                 entrada = LerDadosEntrada();
                 Console.Write("\n");
 
-                if (entrada != 0)
-                {
-                    var divisores = _operacoes.RetornarDivisores(entrada);
-                    var primos = _operacoes.RetornarPrimos(divisores);
+                if (entrada == 0)
+                    break;
 
-                    Console.WriteLine($"Número de Entrada: {entrada}");
-                    Console.WriteLine($"Números divisores: {string.Join(" ", divisores)}");
-                    Console.WriteLine($"Divisores Primos: {string.Join(" ", primos)}");
+                var divisores = _operacoes.RetornarDivisores(entrada);
+                var primos = _operacoes.RetornarPrimos(divisores);
 
-                    Console.Write("\n"); Console.Write("\n"); Console.Write("\n");
-                }
-            } while (entrada != 0);
+                Console.WriteLine($"Número de Entrada: {entrada}");
+                Console.WriteLine($"Números divisores: {string.Join(" ", divisores)}");
+                Console.WriteLine($"Divisores Primos: {string.Join(" ", primos)}");
+
+                Console.Write("\n"); Console.Write("\n");
+            }
         }
 
         private int LerDadosEntrada()
