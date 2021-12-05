@@ -2,7 +2,7 @@
 using Challenge.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Aplicacao.DI
+namespace Application.DI
 {
     public class Injector
     {

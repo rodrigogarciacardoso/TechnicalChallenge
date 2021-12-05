@@ -1,7 +1,7 @@
 ﻿using Challenge.Operacoes;
 using System;
 
-namespace Aplicacao.Programs
+namespace Application.Programs
 {
     public class DecomposicaoNumericaProgram
     {

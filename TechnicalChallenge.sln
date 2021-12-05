@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aplicacao", "Aplicacao\Aplicacao.csproj", "{F91B8B33-5D01-426F-A7FE-3D4DBF06F4AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Aplicacao\Application.csproj", "{F91B8B33-5D01-426F-A7FE-3D4DBF06F4AB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Challenge", "DecomposicaoNumerica\Challenge.csproj", "{50A32063-48F5-4FE6-9A13-3C3F4AF8C79C}"
 EndProject

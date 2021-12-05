@@ -1,7 +1,7 @@
-﻿using Aplicacao.DI;
+﻿using Application.DI;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Aplicacao
+namespace Application
 {
     class Program
     {
