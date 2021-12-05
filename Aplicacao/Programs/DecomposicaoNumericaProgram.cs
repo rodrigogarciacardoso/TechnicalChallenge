@@ -41,6 +41,9 @@ namespace Application.Programs
             string strEntrada = Console.ReadLine();
             int.TryParse(strEntrada, out int entrada);
 
+            if (entrada < 0)
+                throw new ArgumentOutOfRangeException();
+
             return entrada;
         }
     }
