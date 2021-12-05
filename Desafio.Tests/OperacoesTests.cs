@@ -1,9 +1,9 @@
-﻿using Desafio.Classes;
+﻿using Challenge.Classes;
 using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace Desafio.Tests
+namespace Challenge.Tests
 {
     public class OperacoesTests
     {

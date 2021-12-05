@@ -1,4 +1,4 @@
-﻿using Desafio.Classes;
+﻿using Challenge.Classes;
 using System;
 using System.Collections.Generic;
 using Xunit;

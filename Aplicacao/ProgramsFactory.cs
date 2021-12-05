@@ -1,6 +1,6 @@
 ﻿using Aplicacao.Programs;
-using Desafio.Interfaces;
-using Desafio.Operacoes;
+using Challenge.Interfaces;
+using Challenge.Operacoes;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Aplicacao

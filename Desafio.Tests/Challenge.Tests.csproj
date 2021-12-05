@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DecomposicaoNumerica\Desafio.csproj" />
+    <ProjectReference Include="..\DecomposicaoNumerica\Challenge.csproj" />
   </ItemGroup>
 
 </Project>

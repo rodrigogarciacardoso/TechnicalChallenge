@@ -1,5 +1,5 @@
-﻿using Desafio.Classes;
-using Desafio.Interfaces;
+﻿using Challenge.Classes;
+using Challenge.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Aplicacao.DI

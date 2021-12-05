@@ -1,7 +1,7 @@
-﻿using Desafio.Interfaces;
+﻿using Challenge.Interfaces;
 using System.Collections.Generic;
 
-namespace Desafio.Operacoes
+namespace Challenge.Operacoes
 {
     public class Operacoes
     {

@@ -1,8 +1,8 @@
-﻿using Desafio.Interfaces;
+﻿using Challenge.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace Desafio.Classes
+namespace Challenge.Classes
 {
     public class Decomposicao : IDecomposicao
     {

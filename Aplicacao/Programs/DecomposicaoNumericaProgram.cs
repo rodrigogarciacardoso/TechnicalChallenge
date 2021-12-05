@@ -1,5 +1,4 @@
-﻿using Desafio.Interfaces;
-using Desafio.Operacoes;
+﻿using Challenge.Operacoes;
 using System;
 
 namespace Aplicacao.Programs
@@ -20,7 +19,7 @@ namespace Aplicacao.Programs
             while (true)
             {
                 Console.Write("Digite um número: ");
-                entrada = LerDadosEntrada();
+                entrada = LerEntrada();
                 Console.Write("\n");
 
                 if (entrada == 0)
@@ -37,7 +36,7 @@ namespace Aplicacao.Programs
             }
         }
 
-        private int LerDadosEntrada()
+        private int LerEntrada()
         {
             string strEntrada = Console.ReadLine();
             int.TryParse(strEntrada, out int entrada);

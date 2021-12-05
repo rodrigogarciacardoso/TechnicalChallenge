@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Desafio.Interfaces
+namespace Challenge.Interfaces
 {
     public interface IValidarPrimos
     {
